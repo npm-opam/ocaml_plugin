@@ -1,0 +1,92 @@
+<**/*.ml{,i}>: warn(-40), no_alias_deps
+<**/*>: thread
+# This prevents the implicit addition of -ppx options by ocamlfind
+<**/*>: predicate(custom_ppx)
+<src/*.ml>: for-pack(Ocaml_plugin)
+<bin/*.ml{,i}>: pp(ppx-jane -dump-ast -inline-test-drop -bench-drop -inline-test-lib fake_for_drop)
+<src/*.ml{,i}>: pp(ppx-jane -dump-ast -inline-test-drop -bench-drop -inline-test-lib fake_for_drop)
+# OASIS_START
+# DO NOT EDIT (digest: 0b968146ecb9e9a7022625e8ed8a0b17)
+# Ignore VCS directories, you can use the same kind of rule outside
+# OASIS_START/STOP if you want to exclude directories that contains
+# useless stuff for the build process
+true: annot, bin_annot
+<**/.svn>: -traverse
+<**/.svn>: not_hygienic
+".bzr": -traverse
+".bzr": not_hygienic
+".hg": -traverse
+".hg": not_hygienic
+".git": -traverse
+".git": not_hygienic
+"_darcs": -traverse
+"_darcs": not_hygienic
+# Library ocaml_plugin
+"src/ocaml_plugin.cmxs": use_ocaml_plugin
+"src/import.cmx": for-pack(Ocaml_plugin)
+"src/ml_bundle.cmx": for-pack(Ocaml_plugin)
+"src/ocaml_compiler.cmx": for-pack(Ocaml_plugin)
+"src/ocaml_dynloader.cmx": for-pack(Ocaml_plugin)
+"src/ocamldep.cmx": for-pack(Ocaml_plugin)
+"src/params.cmx": for-pack(Ocaml_plugin)
+"src/plugin_cache.cmx": for-pack(Ocaml_plugin)
+"src/plugin_uuid.cmx": for-pack(Ocaml_plugin)
+"src/shell.cmx": for-pack(Ocaml_plugin)
+"src/std.cmx": for-pack(Ocaml_plugin)
+"src/tar.cmx": for-pack(Ocaml_plugin)
+<src/ocaml_plugin.{cma,cmxa}>: use_libocaml_plugin_stubs
+<src/*.ml{,i,y}>: package(async)
+<src/*.ml{,i,y}>: package(bin_prot)
+<src/*.ml{,i,y}>: package(core)
+<src/*.ml{,i,y}>: package(dynlink)
+<src/*.ml{,i,y}>: package(fieldslib)
+<src/*.ml{,i,y}>: package(ppx_assert.runtime-lib)
+<src/*.ml{,i,y}>: package(ppx_bench.runtime-lib)
+<src/*.ml{,i,y}>: package(ppx_expect.collector)
+<src/*.ml{,i,y}>: package(ppx_inline_test.runtime-lib)
+<src/*.ml{,i,y}>: package(sexplib)
+<src/*.ml{,i,y}>: package(typerep)
+<src/*.ml{,i,y}>: package(variantslib)
+"src/ocaml_fake_archive.c": package(async)
+"src/ocaml_fake_archive.c": package(bin_prot)
+"src/ocaml_fake_archive.c": package(core)
+"src/ocaml_fake_archive.c": package(dynlink)
+"src/ocaml_fake_archive.c": package(fieldslib)
+"src/ocaml_fake_archive.c": package(ppx_assert.runtime-lib)
+"src/ocaml_fake_archive.c": package(ppx_bench.runtime-lib)
+"src/ocaml_fake_archive.c": package(ppx_expect.collector)
+"src/ocaml_fake_archive.c": package(ppx_inline_test.runtime-lib)
+"src/ocaml_fake_archive.c": package(sexplib)
+"src/ocaml_fake_archive.c": package(typerep)
+"src/ocaml_fake_archive.c": package(variantslib)
+# Library ocaml_plugin_ocamlbuild
+"ocamlbuild_plugin/ocaml_plugin_ocamlbuild.cmxs": use_ocaml_plugin_ocamlbuild
+<ocamlbuild_plugin/*.ml{,i,y}>: package(ocamlbuild)
+# Executable ocaml-embed-compiler
+<bin/ocaml_embed_compiler.{native,byte}>: package(async)
+<bin/ocaml_embed_compiler.{native,byte}>: package(bin_prot)
+<bin/ocaml_embed_compiler.{native,byte}>: package(core)
+<bin/ocaml_embed_compiler.{native,byte}>: package(dynlink)
+<bin/ocaml_embed_compiler.{native,byte}>: package(fieldslib)
+<bin/ocaml_embed_compiler.{native,byte}>: package(ppx_assert.runtime-lib)
+<bin/ocaml_embed_compiler.{native,byte}>: package(ppx_bench.runtime-lib)
+<bin/ocaml_embed_compiler.{native,byte}>: package(ppx_expect.collector)
+<bin/ocaml_embed_compiler.{native,byte}>: package(ppx_inline_test.runtime-lib)
+<bin/ocaml_embed_compiler.{native,byte}>: package(sexplib)
+<bin/ocaml_embed_compiler.{native,byte}>: package(typerep)
+<bin/ocaml_embed_compiler.{native,byte}>: package(variantslib)
+<bin/ocaml_embed_compiler.{native,byte}>: use_ocaml_plugin
+<bin/*.ml{,i,y}>: package(async)
+<bin/*.ml{,i,y}>: package(bin_prot)
+<bin/*.ml{,i,y}>: package(core)
+<bin/*.ml{,i,y}>: package(dynlink)
+<bin/*.ml{,i,y}>: package(fieldslib)
+<bin/*.ml{,i,y}>: package(ppx_assert.runtime-lib)
+<bin/*.ml{,i,y}>: package(ppx_bench.runtime-lib)
+<bin/*.ml{,i,y}>: package(ppx_expect.collector)
+<bin/*.ml{,i,y}>: package(ppx_inline_test.runtime-lib)
+<bin/*.ml{,i,y}>: package(sexplib)
+<bin/*.ml{,i,y}>: package(typerep)
+<bin/*.ml{,i,y}>: package(variantslib)
+<bin/*.ml{,i,y}>: use_ocaml_plugin
+# OASIS_STOP

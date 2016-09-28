@@ -1,0 +1,50 @@
+(* OASIS_START *)
+(* DO NOT EDIT (digest: 795f8c4b0b4ecb981eb7b12445bb8e69) *)
+
+This is the INSTALL file for the ocaml_plugin distribution.
+
+This package uses OASIS to generate its build system. See section OASIS for
+full information.
+
+Dependencies
+============
+
+In order to compile this package, you will need:
+
+* ocaml (>= 4.02.3)
+* findlib (>= 1.3.2)
+* async for library ocaml_plugin, executable ocaml-embed-compiler
+* bin_prot for library ocaml_plugin, executable ocaml-embed-compiler
+* core for library ocaml_plugin, executable ocaml-embed-compiler
+* fieldslib for library ocaml_plugin, executable ocaml-embed-compiler
+* ppx_assert for library ocaml_plugin, executable ocaml-embed-compiler
+* ppx_bench for library ocaml_plugin, executable ocaml-embed-compiler
+* ppx_expect for library ocaml_plugin, executable ocaml-embed-compiler
+* ppx_inline_test for library ocaml_plugin, executable ocaml-embed-compiler
+* sexplib for library ocaml_plugin, executable ocaml-embed-compiler
+* typerep for library ocaml_plugin, executable ocaml-embed-compiler
+* variantslib for library ocaml_plugin, executable ocaml-embed-compiler
+* ocamlbuild for library ocaml_plugin_ocamlbuild
+
+Installing
+==========
+
+1. Uncompress the source archive and go to the root of the package
+2. Run 'ocaml setup.ml -configure'
+3. Run 'ocaml setup.ml -build'
+4. Run 'ocaml setup.ml -install'
+
+Uninstalling
+============
+
+1. Go to the root of the package
+2. Run 'ocaml setup.ml -uninstall'
+
+OASIS
+=====
+
+OASIS is a program that generates a setup.ml file using a simple '_oasis'
+configuration file. The generated setup only depends on the standard OCaml
+installation: no additional library is required.
+
+(* OASIS_STOP *)
